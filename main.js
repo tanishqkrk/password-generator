@@ -13,9 +13,14 @@ const medium = document.querySelector('#medium');
 const hard = document.querySelector('#hard');
 const bar = document.querySelectorAll('.app__main--strength-meter-bars-bar');
 const button = document.querySelector('.app__main--button');
+const passwordArray = [];
+
 
 const generate = e => {
-
+  for (let i = 0; i < range; i++) {
+    passwordArray.push(Math.random * 9 + 0)
+  }
+  password.innerHTML = passwordArray
 }
 
 button.addEventListener('click', generate);
