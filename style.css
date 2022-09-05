@@ -1,0 +1,260 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+:root {
+  --background-color: #000;
+  --theme-color: #A3FFAB;
+  --font: 'Roboto Mono', monospace;
+}
+
+* {
+  /* outline: 1px solid red; */
+}
+
+body {
+  background-color: var(--background-color);
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  color: white;
+  font-family: var(--font);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-weight: 600;
+  user-select: none;
+}
+
+#app {
+  height: 80vh;
+  /* padding: 1em; */
+  width: 30%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+
+.app__title {
+  font-size: 18px;
+  color: #817e98;
+}
+
+.app__password,
+.app__main {
+  width: 100%;
+  background-color: #24232c;
+  margin: 10px 0;
+  /* text-align: center; */
+}
+
+.app__password {
+  height: 20%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  padding: 20px;
+  font-size: 35px;
+  letter-spacing: 3px;
+}
+
+.app__password--container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.app__password i {
+  font-size: 22px;
+}
+
+.app__main {
+  padding: 20px;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.app__main--length {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.app__main--length-value label {
+  font-size: 32px;
+  color: var(--theme-color);
+}
+
+.app__main--range {
+  width: 100%;
+}
+
+.app__main--range-slider {
+  width: 100%;
+  margin: 0;
+  -webkit-appearance: none;
+}
+
+.app__main--range-slider {
+  background-color: black;
+  height: 5px;
+}
+
+.app__main--range-slider::-webkit-slider-thumb {
+  padding: 1em;
+  /* width: 30px; */
+  /* height: 30px; */
+  /* background: var(--theme-color); */
+  /* cursor: pointer; */
+  border: 1px solid var(--theme-color);
+}
+
+.app__main--options-option {
+  margin: 12px 0;
+  display: flex;
+  align-items: center;
+  /* justify-content: ; */
+}
+
+.app__main--options-option input {
+  margin: 0;
+  margin-right: 20px;
+  /* margin: 12px 0; */
+  -webkit-appearance: none;
+  /* background: var(--theme-color); */
+  width: 20px;
+  height: 20px;
+  border: 1px solid white;
+  cursor: pointer;
+}
+
+.app__main--options-option input:hover {
+  border-color: var(--theme-color);
+}
+
+.app__main--options-option input:checked {
+  background: var(--theme-color);
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app__main--options-option input:checked::after {
+  font: var(--fa-font-solid);
+  /* font-weight: bolder; */
+  content: '\f00c';
+}
+
+.app__main--strength {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #18171f;
+  padding: 20px;
+  /* width: 100%; */
+}
+
+.app__main--strength-meter {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+#easy,
+#medium,
+#hard {
+  display: none;
+}
+
+.app__main--strength-meter-name {
+  margin-right: 10px;
+}
+
+.app__main--strength-meter-bars {
+  display: flex;
+}
+
+.app__main--strength-meter-bars-bar {
+  margin: 0 5px;
+  height: 30px;
+  width: 10px;
+  border: 2px solid white;
+}
+
+.app__main--button {
+  width: 100%;
+}
+
+.app__main--button-button {
+  width: 100%;
+  height: 60px;
+  background: var(--theme-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 800;
+}
+
+.easy {
+  background-color: var(--theme-color);
+  border: none;
+}
+
+.medium {
+  background-color: rgb(255, 214, 12);
+  border: none;
+}
+
+.hard {
+  background-color: red;
+  border: none;
+}
+
+@media(max-width:1000px) {
+  #app {
+    width: 60%;
+  }
+}
+
+@media(max-width:650px) {
+  #app {
+    width: 80%;
+  }
+
+  .app__password {
+    font-size: 25px;
+  }
+}
+
+
+
+@media(max-width:350px) {
+  #app {
+    width: 90%;
+  }
+
+  .app__main--options-option input {
+    margin-right: 10px;
+  }
+}
+
+@media(max-width:300px) {
+
+  #app,
+  .app__main,
+  .app__password {
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+  }
+
+  .app__password {
+    height: 40%;
+  }
+}

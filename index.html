@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="./assests/lock.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Password Generator</title>
+  <script type="module" src="/main.js" defer></script>
+  <script src="https://kit.fontawesome.com/cffed4b148.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div id="app">
+    <div class="app__title">Password Generator</div>
+    <div class="app__password">
+      <div class="app__password--container">
+        I3$A@9054#2AV1
+      </div>
+      <i class="fa-solid fa-copy app__password--container-icon"></i>
+    </div>
+    <div class="app__main">
+      <div class="app__main--length">
+        <div class="app__main--length-title">Character Length</div>
+        <div class="app__main--length-value"><label for="range">10</label></div>
+      </div>
+      <div class="app__main--range">
+        <input class="app__main--range-slider" type="range" name="range" id="range" min="6" max="14">
+      </div>
+      <div class="app__main--options">
+        <div class="app__main--options-option" id="uppercase">
+          <input type="checkbox" name="uppercase" id="uppercase">
+          <label class="checkLabel" for="uppercase">Include Uppercase Letters</label>
+        </div>
+        <div class="app__main--options-option" id="lowercase">
+          <input type="checkbox" name="lowercase" id="lowercase">
+          <label class="checkLabel" for="lowercase">Include Lowercase Letters</label>
+        </div>
+        <div class="app__main--options-option" id="numbers">
+          <input type="checkbox" name="uppercase" id="numbers">
+          <label class="checkLabel" for="numbers">Include Numbers</label>
+        </div>
+        <div class="app__main--options-option" id="symbols">
+          <input type="checkbox" name="uppercase" id="symbols">
+          <label class="checkLabel" for="symbols">Include Symbols</label>
+        </div>
+      </div>
+      <div class="app__main--strength">
+        <div class="app__main--strength-title">STRENGTH</div>
+        <div class="app__main--strength-meter">
+          <div class="app__main--strength-meter-name" id="easy">EASY</div>
+          <div class="app__main--strength-meter-name" id="medium">MEDIUM</div>
+          <div class="app__main--strength-meter-name" id="hard">HARD</div>
+          <div class="app__main--strength-meter-bars">
+            <div class="app__main--strength-meter-bars-bar" id="1"></div>
+            <div class="app__main--strength-meter-bars-bar" id="2"></div>
+            <div class="app__main--strength-meter-bars-bar" id="3"></div>
+            <div class="app__main--strength-meter-bars-bar" id="4"></div>
+          </div>
+        </div>
+      </div>
+      <div class="app__main--button">
+        <button class="app__main--button-button">GENERATE <i class="fa-solid fa-arrow-right"></i></button>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
