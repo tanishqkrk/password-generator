@@ -26,5 +26,7 @@ const generate = e => {
     }
   }
 }
+
+rangeBar.addEventListener('input', generate)
 button.addEventListener('click', generate);
 button.click()
