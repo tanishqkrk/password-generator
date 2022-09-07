@@ -1,3 +1,4 @@
+// Selectors
 const password = document.querySelector('.app__password--container');
 const copy = document.querySelector('.app__password i');
 const range = document.querySelector('#range').value;
@@ -23,7 +24,7 @@ const generate = e => {
   const passwordArray = [];
   const uppercaseLetters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
   const lowercaseLetters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
-  const symbolLetters = ['!', '@', '#', '$', '%', '^', '&', '*'];
+  const symbolLetters = ['!', '@', '#', '$', '%', '^', '&', '*', '?', '`', '~', '|'];
 
   // For every item from 0 to the set range, the random function will create a character
 
@@ -33,15 +34,68 @@ const generate = e => {
     let randomNumber = Math.floor(Math.random() * 9 + 0);
     let randomSymbol = symbolLetters[Math.floor(Math.random() * symbolLetters.length)]
     password.innerHTML = passwordArray.join('');
-    let masterRandom = [randomUppercase, randomLowercase, randomSymbol, randomNumber]
 
     // Checkbox conditions
-    if (!uppercase.checked && !lowercase.checked && !numbers.checked && !symbols.checked) {
+    if (uppercase.checked && lowercase.checked && numbers.checked && symbols.checked) {
+      let masterRandom = [randomUppercase, randomLowercase, randomSymbol, randomNumber]
+      passwordArray.push(masterRandom[Math.floor(Math.random() * masterRandom.length)]);
+    } else if (uppercase.checked && !lowercase.checked && !numbers.checked && !symbols.checked) {
+      let masterRandom = [randomUppercase]
+      passwordArray.push(masterRandom[Math.floor(Math.random() * masterRandom.length)]);
+    } else if (!uppercase.checked && lowercase.checked && !numbers.checked && !symbols.checked) {
+      let masterRandom = [randomLowercase]
+      passwordArray.push(masterRandom[Math.floor(Math.random() * masterRandom.length)]);
+    } else if (!uppercase.checked && !lowercase.checked && numbers.checked && !symbols.checked) {
+      let masterRandom = [randomNumber]
+      passwordArray.push(masterRandom[Math.floor(Math.random() * masterRandom.length)]);
+    } else if (!uppercase.checked && !lowercase.checked && !numbers.checked && symbols.checked) {
+      let masterRandom = [randomSymbol]
+      passwordArray.push(masterRandom[Math.floor(Math.random() * masterRandom.length)]);
+    } else if (uppercase.checked && lowercase.checked && !numbers.checked && !symbols.checked) {
+      let masterRandom = [randomUppercase, randomLowercase]
+      passwordArray.push(masterRandom[Math.floor(Math.random() * masterRandom.length)]);
+    } else if (uppercase.checked && !lowercase.checked && numbers.checked && !symbols.checked) {
+      let masterRandom = [randomUppercase, randomNumber]
+      passwordArray.push(masterRandom[Math.floor(Math.random() * masterRandom.length)]);
+    } else if (uppercase.checked && !lowercase.checked && !numbers.checked && symbols.checked) {
+      let masterRandom = [randomUppercase, randomSymbol]
+      passwordArray.push(masterRandom[Math.floor(Math.random() * masterRandom.length)]);
+    } else if (!uppercase.checked && lowercase.checked && !numbers.checked && symbols.checked) {
+      let masterRandom = [randomLowercase, randomSymbol]
+      passwordArray.push(masterRandom[Math.floor(Math.random() * masterRandom.length)]);
+    } else if (!uppercase.checked && lowercase.checked && numbers.checked && !symbols.checked) {
+      let masterRandom = [randomLowercase, randomNumber]
+      passwordArray.push(masterRandom[Math.floor(Math.random() * masterRandom.length)]);
+    } else if (!uppercase.checked && !lowercase.checked && numbers.checked && symbols.checked) {
+      let masterRandom = [randomNumber, randomSymbol]
+      passwordArray.push(masterRandom[Math.floor(Math.random() * masterRandom.length)]);
+    } else if (uppercase.checked && lowercase.checked && numbers.checked && !symbols.checked) {
+      let masterRandom = [randomUppercase, randomLowercase, randomNumber]
+      passwordArray.push(masterRandom[Math.floor(Math.random() * masterRandom.length)]);
+    } else if (uppercase.checked && !lowercase.checked && numbers.checked && symbols.checked) {
+      let masterRandom = [randomUppercase, randomNumber, randomSymbol]
+      passwordArray.push(masterRandom[Math.floor(Math.random() * masterRandom.length)]);
+    } else if (uppercase.checked && lowercase.checked && !numbers.checked && symbols.checked) {
+      let masterRandom = [randomUppercase, randomLowercase, randomSymbol]
+      passwordArray.push(masterRandom[Math.floor(Math.random() * masterRandom.length)]);
+    } else if (!uppercase.checked && lowercase.checked && numbers.checked && symbols.checked) {
+      let masterRandom = [randomLowercase, randomNumber, randomSymbol]
       passwordArray.push(masterRandom[Math.floor(Math.random() * masterRandom.length)]);
     }
   }
 }
 
+// const review = e => {
+//   if (range < 20) {
+//     easy.style.display = 'block';
+//   }
+// }
+
 rangeBar.addEventListener('input', generate)
 button.addEventListener('click', generate);
+// button.addEventListener('click', review);
+uppercase.addEventListener('input', generate)
+lowercase.addEventListener('input', generate)
+numbers.addEventListener('input', generate)
+symbols.addEventListener('input', generate)
 button.click()
