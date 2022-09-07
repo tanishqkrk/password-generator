@@ -91,6 +91,8 @@ body {
 
 .app__main--range {
   width: 100%;
+  margin: 10px 0;
+
 }
 
 .app__main--range-slider {
@@ -102,6 +104,7 @@ body {
 
 .app__main--range-slider {
   background-color: black;
+
   height: 5px;
 }
 
@@ -137,6 +140,7 @@ body {
   height: 16px;
   border: 1px solid white;
   cursor: pointer;
+
 }
 
 .app__main--options-option input:hover {
@@ -163,7 +167,7 @@ body {
   align-items: center;
   background-color: #18171f;
   padding: 20px;
-  margin: 20px 0;
+  margin: 10px 0;
   /* width: 100%; */
 }
 
