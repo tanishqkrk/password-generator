@@ -195,7 +195,7 @@ body {
   margin: 0 5px;
   height: 30px;
   width: 10px;
-  border: 2px solid white;
+  outline: 2px solid white;
 }
 
 .app__main--button {

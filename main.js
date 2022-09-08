@@ -1,7 +1,7 @@
 // Selectors
 const password = document.querySelector('.app__password--container');
 const copy = document.querySelector('.app__password i');
-const range = document.querySelector('#range').value;
+let range = document.querySelector('#range').value;
 const rangeBar = document.querySelector('.app__main--range-slider');
 const rangeNumber = document.querySelector('.app__main--length-value label');
 const uppercase = document.querySelector('#uppercase');
@@ -13,6 +13,7 @@ const medium = document.querySelector('#medium');
 const hard = document.querySelector('#hard');
 const bar = document.querySelectorAll('.app__main--strength-meter-bars-bar');
 const button = document.querySelector('.app__main--button-button');
+let checkboxes = document.querySelectorAll('.checkBoxes');
 
 // live bar values 
 rangeBar.addEventListener('input', e => {
@@ -85,17 +86,126 @@ const generate = e => {
   }
 }
 
-// const review = e => {
-//   if (range < 20) {
-//     easy.style.display = 'block';
-//   }
-// }
+const review = e => {
+  let reviewArray = [];
+  for (let i = 0; i < checkboxes.length; i++) {
+    if (checkboxes[i].checked) {
+      reviewArray.push(checkboxes[i].checked);
+    }
+  }
+  // console.log(reviewArray);
+  if (rangeBar.value < 8 && reviewArray.length == 1) {
+    easy.style.display = 'block';
+    medium.style.display = 'none';
+    hard.style.display = 'none';
+    document.getElementById('1').style.background = '#A3FFAB';
+    document.getElementById('2').style.background = 'none';
+    document.getElementById('3').style.background = 'none';
+    document.getElementById('4').style.background = 'none';
+  } else if (rangeBar.value < 8 && reviewArray.length == 2) {
+    easy.style.display = 'block';
+    medium.style.display = 'none';
+    hard.style.display = 'none';
+    document.getElementById('1').style.background = '#A3FFAB';
+    document.getElementById('2').style.background = 'none';
+    document.getElementById('3').style.background = 'none';
+    document.getElementById('4').style.background = 'none';
+  } else if (rangeBar.value < 8 && reviewArray.length == 3) {
+    easy.style.display = 'block';
+    medium.style.display = 'none';
+    hard.style.display = 'none';
+    document.getElementById('1').style.background = '#A3FFAB'
+    document.getElementById('2').style.background = 'none';
+    document.getElementById('3').style.background = 'none';
+    document.getElementById('4').style.background = 'none';;
+  } else if (rangeBar.value < 8 && reviewArray.length == 4) {
+    easy.style.display = 'none';
+    medium.style.display = 'block';
+    hard.style.display = 'none';
+    document.getElementById('1').style.background = 'rgb(255, 214, 12)';
+    document.getElementById('2').style.background = 'rgb(255, 214, 12)';
+    document.getElementById('3').style.background = 'rgb(255, 214, 12)';
+    document.getElementById('4').style.background = 'none';
+  } else if (9 < rangeBar.value < 12 && reviewArray.length == 1) {
+    easy.style.display = 'block';
+    medium.style.display = 'none';
+    hard.style.display = 'none';
+    document.getElementById('1').style.background = '#A3FFAB';
+    document.getElementById('2').style.background = 'none';
+    document.getElementById('3').style.background = 'none';
+    document.getElementById('4').style.background = 'none';
+  } else if (9 < rangeBar.value < 12 && reviewArray.length == 2) {
+    easy.style.display = 'none';
+    medium.style.display = 'block';
+    hard.style.display = 'none';
+    document.getElementById('1').style.background = 'rgb(255, 214, 12)';
+    document.getElementById('2').style.background = 'rgb(255, 214, 12)';
+    document.getElementById('3').style.background = 'rgb(255, 214, 12)';
+    document.getElementById('4').style.background = 'none';
+  } else if (9 < rangeBar.value < 12 && reviewArray.length == 3) {
+    easy.style.display = 'none';
+    medium.style.display = 'block';
+    hard.style.display = 'none';
+    document.getElementById('1').style.background = 'rgb(255, 214, 12)';
+    document.getElementById('2').style.background = 'rgb(255, 214, 12)';
+    document.getElementById('3').style.background = 'rgb(255, 214, 12)';
+    document.getElementById('4').style.background = 'none';
+  } else if (9 < rangeBar.value < 12 && reviewArray.length == 4) {
+    easy.style.display = 'none';
+    medium.style.display = 'none';
+    hard.style.display = 'block';
+    document.getElementById('1').style.background = 'red';
+    document.getElementById('2').style.background = 'red';
+    document.getElementById('3').style.background = 'red';
+    document.getElementById('4').style.background = 'red';
+  } else if (13 <= rangeBar.value && reviewArray.length == 1) {
+    easy.style.display = 'none';
+    medium.style.display = 'block';
+    hard.style.display = 'none';
+    document.getElementById('1').style.background = 'rgb(255, 214, 12)';
+    document.getElementById('2').style.background = 'rgb(255, 214, 12)';
+    document.getElementById('3').style.background = 'rgb(255, 214, 12)';
+    document.getElementById('4').style.background = 'none';
+  } else if (13 <= rangeBar.value && reviewArray.length == 2) {
+    easy.style.display = 'none';
+    medium.style.display = 'none';
+    hard.style.display = 'block';
+    document.getElementById('1').style.background = 'red';
+    document.getElementById('2').style.background = 'red';
+    document.getElementById('3').style.background = 'red';
+    document.getElementById('4').style.background = 'red';
+  } else if (13 <= rangeBar.value && reviewArray.length == 3) {
+    easy.style.display = 'none';
+    medium.style.display = 'none';
+    hard.style.display = 'block';
+    document.getElementById('1').style.background = 'red';
+    document.getElementById('2').style.background = 'red';
+    document.getElementById('3').style.background = 'red';
+    document.getElementById('4').style.background = 'red';
+  } else if (13 <= rangeBar.value && reviewArray.length == 4) {
+    easy.style.display = 'none';
+    medium.style.display = 'none';
+    hard.style.display = 'block';
+    document.getElementById('1').style.background = 'red';
+    document.getElementById('2').style.background = 'red';
+    document.getElementById('3').style.background = 'red';
+    document.getElementById('4').style.background = 'red';
+  }
+  // console.log(rangeBar.value);
+}
+
+// copy.addEventListener('click', copyToCliBoard)
 
 rangeBar.addEventListener('input', generate)
+rangeBar.addEventListener('input', review)
 button.addEventListener('click', generate);
-// button.addEventListener('click', review);
+button.addEventListener('click', review);
 uppercase.addEventListener('input', generate)
 lowercase.addEventListener('input', generate)
 numbers.addEventListener('input', generate)
 symbols.addEventListener('input', generate)
+uppercase.addEventListener('input', review)
+lowercase.addEventListener('input', review)
+numbers.addEventListener('input', review)
+symbols.addEventListener('input', review)
 button.click()
