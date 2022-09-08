@@ -1,0 +1,13 @@
+{
+    "$schema": "https://json.schemastore.org/web-manifest-combined.json",
+    "name": "Password Generator",
+    "short_name": "Passwords",
+    "background_color": "#000",
+    "description": "Generates secure passwords for you",
+    "icons": [{
+      "src": "./assets/lock.png",
+      "sizes": "48x48",
+      "type": "image/png"
+    }
+  }
+  
