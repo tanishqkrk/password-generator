@@ -1,6 +1,6 @@
 // Selectors
 const password = document.querySelector('.app__password--container');
-const copy = document.querySelector('.app__password i');
+const copy = document.querySelector('.app__password-copy');
 let range = document.querySelector('#range').value;
 const rangeBar = document.querySelector('.app__main--range-slider');
 const rangeNumber = document.querySelector('.app__main--length-value label');
@@ -12,7 +12,7 @@ const easy = document.querySelector('#easy');
 const medium = document.querySelector('#medium');
 const hard = document.querySelector('#hard');
 const bar = document.querySelectorAll('.app__main--strength-meter-bars-bar');
-const button = document.querySelector('.app__main--button-button');
+const button = document.querySelector('.app__password--refresh');
 let checkboxes = document.querySelectorAll('.checkBoxes');
 
 // live bar values 
@@ -194,7 +194,12 @@ const review = e => {
   // console.log(rangeBar.value);
 }
 
-// copy.addEventListener('click', copyToCliBoard)
+function copyToClipBoard(e) {
+  window.navigator.clipboard.writeText(password.innerHTML)
+}
+
+copy.addEventListener('click', copyToClipBoard)
+copy.click()
 
 rangeBar.addEventListener('input', generate)
 rangeBar.addEventListener('input', review)

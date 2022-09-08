@@ -18,7 +18,10 @@
       <div class="app__password--container" id="password">
         I3$A@9054#2AV1
       </div>
-      <i class="fa-solid fa-copy app__password--container-icon"></i>
+      <div class="app__password--refresh "><i class="fa-solid fa-arrows-rotate"></i></div>
+      <div class="app__password-copy">
+        <i class="fa-solid fa-copy app__password--container-icon"></i>
+      </div>
     </div>
     <div class="app__main">
       <div class="app__main--length">
@@ -30,19 +33,19 @@
       </div>
       <div class="app__main--options">
         <div class="app__main--options-option uppercase">
-          <input class="checkBoxes" type="checkbox" name="uppercase" id="uppercase">
+          <input checked class="checkBoxes" type="checkbox" name="uppercase" id="uppercase">
           <label class="checkLabel" for="uppercase">Include Uppercase Letters</label>
         </div>
         <div class="app__main--options-option lowercase">
-          <input class="checkBoxes" type="checkbox" name="lowercase" id="lowercase">
+          <input checked class="checkBoxes" type="checkbox" name="lowercase" id="lowercase">
           <label class="checkLabel" for="lowercase">Include Lowercase Letters</label>
         </div>
         <div class="app__main--options-option numbers">
-          <input class="checkBoxes" type="checkbox" name="uppercase" id="numbers">
+          <input checked class="checkBoxes" type="checkbox" name="uppercase" id="numbers">
           <label class="checkLabel" for="numbers">Include Numbers</label>
         </div>
         <div class="app__main--options-option symbols">
-          <input class="checkBoxes" type="checkbox" name="uppercase" id="symbols">
+          <input checked class="checkBoxes" type="checkbox" name="uppercase" id="symbols">
           <label class="checkLabel" for="symbols">Include Symbols</label>
         </div>
       </div>
@@ -59,9 +62,6 @@
             <div class="app__main--strength-meter-bars-bar" id="4"></div>
           </div>
         </div>
-      </div>
-      <div class="app__main--button">
-        <button type="button" class="app__main--button-button">GENERATE <i class="fa-solid fa-arrow-right"></i></button>
       </div>
     </div>
   </div>
